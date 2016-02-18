@@ -1,0 +1,14 @@
+---
+- name: Add brightbox Ruby APT repo
+  apt_repository: repo='ppa:brightbox/ruby-ng'
+  sudo: yes
+
+- name: Create .gemrc file
+  copy: src=gemrc dest=~/.gemrc
+
+- name: Install system ruby package
+  sudo: true
+  apt: name={{item}}
+  with_items:
+    - ruby2.3
+    - ruby2.3-dev

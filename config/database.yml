@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+
+development:
+  <<: *default
+  database: promo-request-manager_development
+
+test:
+  <<: *default
+  database: promo-request-manager_test
+
+production:
+  <<: *default
+  database: promo-request-manager_production
+  username: promo-request-manager
+  password: <%= ENV['PROMO-REQUEST-MANAGER_DATABASE_PASSWORD'] %>

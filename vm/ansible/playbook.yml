@@ -1,0 +1,50 @@
+---
+- hosts: all
+  roles:
+    - zsh
+    - ruby
+
+  tasks:
+    - name: Install system packages
+      sudo: true
+      apt: name={{item}} update_cache=yes
+      with_items:
+        - build-essential
+        - postgresql-server-dev-all
+        - postgresql-client
+        - zlib1g-dev
+        - vim
+        - git
+        - tmux
+        - sqlite
+        - libsqlite3-dev
+        - nodejs
+        - libterm-readkey-perl
+
+    - gem: name=bundler state=latest
+
+    - name: Bundle - Install project gems
+      shell: zsh -lci "cd /home/vagrant/app && bundle install --path vendor/bundle"
+      become: true
+      become_method: su
+      become_user: vagrant
+
+    - name: check for host .gitconfig
+      local_action: stat path=~/.gitconfig
+      register: host_gitconfig
+
+    - name: copy gitconfig from the host
+      copy: src={{host_gitconfig.stat.path}} dest=~/
+      when: host_gitconfig.stat.exists
+
+    - name: Override git user gitconfig credential helper
+      shell: git config --global credential.helper 'cache --timeout=90000000'
+
+    - name: check for host .tmux.conf
+      local_action: stat path=~/.tmux.conf
+      register: host_tmux_conf
+      ignore_errors: True
+
+    - name: copy tmux conf from the host
+      copy: src={{host_tmux_conf.stat.path}} dest=~/
+      when: host_tmux_conf.stat.exists

@@ -1,0 +1,46 @@
+---
+- name: install zsh
+  sudo: yes
+  apt: name=zsh state=present
+
+# This is an example of how to gather information from the machine. We
+# run a command with the "shell" module and register the result into the
+# "default_shell" variable
+# - name: zsh facts
+#   shell: 'echo $SHELL'
+#   register: default_shell
+#   # changed when determines when will this task be considered changed when running
+#   # ansible. In this case, we want it to always be false, as we are just
+#   # retrieving information.
+#   changed_when: False
+#   sudo: no
+
+# Now, we want to set zsh as the default shell, unless it is already the default
+# one.
+  # This task will run only when the following is true. In here, we check the
+  # value registered previously within the "default_shell" variable.
+  # when: default_shell.stdout.find('zsh') == -1
+
+- name: source /etc/profile.d/* for zsh
+  copy: src=etc_zsh_zprofile dest=/etc/zsh/zprofile
+  sudo: true
+
+- name: create vagrant user .zshrc file
+  copy: src=zshrc dest=~/.zshrc
+
+- name: make zsh default
+  shell: chsh -s /bin/zsh vagrant
+  sudo: yes
+
+- name: make zsh default
+  shell: chsh -s /bin/zsh root
+  sudo: yes
+
+- name: check for host custom project zshrc
+  local_action: stat path=../../../promotion_request_manager_zshrc
+  register: custom_project_zshrc
+  ignore_errors: True
+
+- name: copy custom project zshrc
+  template: src={{custom_project_zshrc.stat.path}} dest=~/.custom_project_zshrc
+  when: custom_project_zshrc.stat.exists
