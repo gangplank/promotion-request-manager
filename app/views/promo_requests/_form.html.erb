@@ -28,8 +28,8 @@
     <%= f.text_field :promo_image_uri %>
   </div>
   <div class="field">
-    <%= f.label :initiative_id %><br>
-    <%= f.number_field :initiative_id %>
+    <%= f.label :gangplank_initiative_id %><br>
+    <%= f.collection_select(:gangplank_initiative_id, @gangplank_initiatives, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :organization_name %><br>
