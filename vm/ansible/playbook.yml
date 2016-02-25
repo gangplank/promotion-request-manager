@@ -20,6 +20,7 @@
         - libsqlite3-dev
         - nodejs
         - libterm-readkey-perl
+        - inotify-tools
 
     - gem: name=bundler state=latest
 
