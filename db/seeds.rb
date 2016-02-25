@@ -12,3 +12,6 @@ GangplankLocation.create(name: 'Queen Creek')
 GangplankInitiative.create(name: 'Labs')
 GangplankInitiative.create(name: 'Academy')
 GangplankInitiative.create(name: 'Business')
+
+PromoChannel.create(name: 'Facebook')
+PromoChannel.create(name: 'Twitter')
