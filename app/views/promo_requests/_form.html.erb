@@ -20,8 +20,8 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :location_id %><br>
-    <%= f.number_field :location_id %>
+    <%= f.label :gangplank_location_id %><br>
+    <%= f.collection_select(:gangplank_location_id, @gangplank_locations, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :promo_image_uri %><br>

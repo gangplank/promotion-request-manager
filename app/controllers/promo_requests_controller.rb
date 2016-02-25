@@ -1,6 +1,7 @@
 class PromoRequestsController < ApplicationController
   before_action :set_promo_request, only: [:show, :edit, :update, :destroy]
 
+  
   # GET /promo_requests
   # GET /promo_requests.json
   def index
@@ -10,15 +11,18 @@ class PromoRequestsController < ApplicationController
   # GET /promo_requests/1
   # GET /promo_requests/1.json
   def show
+    @gangplank_location = GangplankLocation.find(@promo_request.gangplank_location_id)
   end
 
   # GET /promo_requests/new
   def new
+    @gangplank_locations = GangplankLocation.all
     @promo_request = PromoRequest.new
   end
 
   # GET /promo_requests/1/edit
   def edit
+    @gangplank_locations = GangplankLocation.all
   end
 
   # POST /promo_requests
@@ -69,6 +73,6 @@ class PromoRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promo_request_params
-      params.require(:promo_request).permit(:event_name, :description, :location_id, :promo_image_uri, :initiative_id, :organization_name, :organizer_email, :is_space_reserved, :event_privacy, :is_free, :registration_url, :press_release_uri)
+      params.require(:promo_request).permit(:event_name, :description, :gangplank_location_id, :promo_image_uri, :initiative_id, :organization_name, :organizer_email, :is_space_reserved, :event_privacy, :is_free, :registration_url, :press_release_uri)
     end
 end

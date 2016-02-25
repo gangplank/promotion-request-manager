@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225010938) do
+ActiveRecord::Schema.define(version: 20160225020019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "gangplank_initiatives", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gangplank_locations", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160225010938) do
   create_table "promo_requests", force: :cascade do |t|
     t.string   "event_name"
     t.text     "description"
-    t.integer  "location_id"
+    t.integer  "gangplank_location_id"
     t.string   "promo_image_uri"
     t.integer  "initiative_id"
     t.string   "organization_name"
@@ -46,8 +52,8 @@ ActiveRecord::Schema.define(version: 20160225010938) do
     t.boolean  "is_free"
     t.string   "registration_url"
     t.string   "press_release_uri"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end
