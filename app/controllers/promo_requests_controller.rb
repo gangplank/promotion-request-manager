@@ -1,6 +1,5 @@
 class PromoRequestsController < ApplicationController
   before_action :set_promo_request, only: [:show, :edit, :update, :destroy]
-
   
   # GET /promo_requests
   # GET /promo_requests.json
