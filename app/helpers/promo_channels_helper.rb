@@ -1,0 +1,2 @@
+module PromoChannelsHelper
+end

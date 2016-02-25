@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event name:</strong>
+  <%= @promo_request.event_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @promo_request.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @promo_request.location_id %>
+</p>
+
+<p>
+  <strong>Promo image uri:</strong>
+  <%= @promo_request.promo_image_uri %>
+</p>
+
+<p>
+  <strong>Initiative:</strong>
+  <%= @promo_request.initiative_id %>
+</p>
+
+<p>
+  <strong>Organization name:</strong>
+  <%= @promo_request.organization_name %>
+</p>
+
+<p>
+  <strong>Organizer email:</strong>
+  <%= @promo_request.organizer_email %>
+</p>
+
+<p>
+  <strong>Is space reserved:</strong>
+  <%= @promo_request.is_space_reserved %>
+</p>
+
+<p>
+  <strong>Event privacy:</strong>
+  <%= @promo_request.event_privacy %>
+</p>
+
+<p>
+  <strong>Is free:</strong>
+  <%= @promo_request.is_free %>
+</p>
+
+<p>
+  <strong>Registration url:</strong>
+  <%= @promo_request.registration_url %>
+</p>
+
+<p>
+  <strong>Press release uri:</strong>
+  <%= @promo_request.press_release_uri %>
+</p>
+
+<%= link_to 'Edit', edit_promo_request_path(@promo_request) %> |
+<%= link_to 'Back', promo_requests_path %>

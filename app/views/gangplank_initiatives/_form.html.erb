@@ -1,0 +1,21 @@
+<%= form_for(@gangplank_initiative) do |f| %>
+  <% if @gangplank_initiative.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gangplank_initiative.errors.count, "error") %> prohibited this gangplank_initiative from being saved:</h2>
+
+      <ul>
+      <% @gangplank_initiative.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

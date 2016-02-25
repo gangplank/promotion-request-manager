@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gangplank Initiatives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gangplank_initiatives.each do |gangplank_initiative| %>
+      <tr>
+        <td><%= gangplank_initiative.name %></td>
+        <td><%= link_to 'Show', gangplank_initiative %></td>
+        <td><%= link_to 'Edit', edit_gangplank_initiative_path(gangplank_initiative) %></td>
+        <td><%= link_to 'Destroy', gangplank_initiative, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gangplank initiative', new_gangplank_initiative_path %>

@@ -1,0 +1,65 @@
+<%= form_for(@promo_request) do |f| %>
+  <% if @promo_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@promo_request.errors.count, "error") %> prohibited this promo_request from being saved:</h2>
+
+      <ul>
+      <% @promo_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event_name %><br>
+    <%= f.text_field :event_name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :promo_image_uri %><br>
+    <%= f.text_field :promo_image_uri %>
+  </div>
+  <div class="field">
+    <%= f.label :initiative_id %><br>
+    <%= f.number_field :initiative_id %>
+  </div>
+  <div class="field">
+    <%= f.label :organization_name %><br>
+    <%= f.text_field :organization_name %>
+  </div>
+  <div class="field">
+    <%= f.label :organizer_email %><br>
+    <%= f.text_field :organizer_email %>
+  </div>
+  <div class="field">
+    <%= f.label :is_space_reserved %><br>
+    <%= f.check_box :is_space_reserved %>
+  </div>
+  <div class="field">
+    <%= f.label :event_privacy %><br>
+    <%= f.text_field :event_privacy %>
+  </div>
+  <div class="field">
+    <%= f.label :is_free %><br>
+    <%= f.check_box :is_free %>
+  </div>
+  <div class="field">
+    <%= f.label :registration_url %><br>
+    <%= f.text_field :registration_url %>
+  </div>
+  <div class="field">
+    <%= f.label :press_release_uri %><br>
+    <%= f.text_field :press_release_uri %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

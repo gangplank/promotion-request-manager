@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_name: MyString
+  description: MyText
+  location_id: 1
+  promo_image_uri: MyString
+  initiative_id: 1
+  organization_name: MyString
+  organizer_email: MyString
+  is_space_reserved: false
+  event_privacy: MyString
+  is_free: false
+  registration_url: MyString
+  press_release_uri: MyString
+
+two:
+  event_name: MyString
+  description: MyText
+  location_id: 1
+  promo_image_uri: MyString
+  initiative_id: 1
+  organization_name: MyString
+  organizer_email: MyString
+  is_space_reserved: false
+  event_privacy: MyString
+  is_free: false
+  registration_url: MyString
+  press_release_uri: MyString
