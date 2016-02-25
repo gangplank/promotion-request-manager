@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+GangplankLocation.create(name: 'Chandler')
+GangplankLocation.create(name: 'Avondale')
+GangplankLocation.create(name: 'Queen Creek')
+
+GangplankInitiative.create(name: 'Labs')
+GangplankInitiative.create(name: 'Academy')
+GangplankInitiative.create(name: 'Business')
