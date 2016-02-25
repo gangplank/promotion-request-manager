@@ -60,5 +60,16 @@
   <%= @promo_request.press_release_uri %>
 </p>
 
+<p>
+  <strong>Channels</strong>
+  <ul>
+    <% @promo_request.promo_channels.each do |promo_channel| %>
+       <li>
+          <%= promo_channel.name %>
+       </li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_promo_request_path(@promo_request) %> |
 <%= link_to 'Back', promo_requests_path %>
