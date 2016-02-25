@@ -76,6 +76,6 @@ class PromoRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promo_request_params
-      params.require(:promo_request).permit(:event_name, :description, :gangplank_location_id, :promo_image_uri, :gangplank_initiative_id, :organization_name, :organizer_email, :is_space_reserved, :event_privacy, :is_free, :registration_url, :press_release_uri, promo_channel_ids: [])
+      params.require(:promo_request).permit(:event_name, :description, :start_datetime, :end_datetime, :gangplank_location_id, :promo_image_uri, :gangplank_initiative_id, :organization_name, :organizer_email, :is_space_reserved, :event_privacy, :is_free, :registration_url, :press_release_uri, promo_channel_ids: [])
     end
 end
