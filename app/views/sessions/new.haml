@@ -1,1 +1,11 @@
-new
+= form_tag login_path do
+  %dl
+    %dt
+      = label_tag :email
+    %dd
+      = text_field_tag :email
+    %dt
+      = label_tag :password
+    %dd
+      = text_field_tag :password
+  = submit_tag 'Submit'
