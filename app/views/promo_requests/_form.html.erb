@@ -53,7 +53,7 @@
   </div>
   <div class="field">
     <%= f.label :event_privacy %><br>
-    <%= f.text_field :event_privacy %>
+    <%= f.select(:event_privacy, options_for_select([['Open/public', 'open'], ['Closed/private', 'closed']])) %>
   </div>
   <div class="field">
     <%= f.label :is_free %><br>
