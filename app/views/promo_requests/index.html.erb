@@ -6,15 +6,12 @@
   <thead>
     <tr>
       <th>Event name</th>
-      <th>Gangplank Location</th>
-      <th>Gangplank Initiative</th>
-      <th>Organization name</th>
-      <th>Organizer email</th>
-      <th>Is space reserved</th>
-      <th>Event privacy</th>
-      <th>Is free</th>
-      <th>Registration url</th>
-      <th>Press release uri</th>
+      <th>Location</th>
+      <th>Initiative</th>
+      <th>Organizer Name</th>
+      <th>Space Reserved?</th>
+      <th>Event Privacy</th>
+      <th>Event Free?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,16 +22,11 @@
         <td><%= promo_request.event_name %></td>
         <td><%= promo_request.gangplank_location.name %></td>
         <td><%= promo_request.gangplank_initiative.name %></td>
-        <td><%= promo_request.organization_name %></td>
-        <td><%= promo_request.organizer_email %></td>
+        <td><%= promo_request.organizer_name %></td>
         <td><%= promo_request.is_space_reserved %></td>
         <td><%= promo_request.event_privacy %></td>
         <td><%= promo_request.is_free %></td>
-        <td><%= promo_request.registration_url %></td>
-        <td><%= promo_request.press_release_uri %></td>
         <td><%= link_to 'Show', promo_request %></td>
-        <td><%= link_to 'Edit', edit_promo_request_path(promo_request) %></td>
-        <td><%= link_to 'Destroy', promo_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

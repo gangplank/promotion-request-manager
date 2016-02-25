@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225151554) do
+ActiveRecord::Schema.define(version: 20160225155449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20160225151554) do
     t.integer  "gangplank_location_id"
     t.string   "promo_image_uri"
     t.integer  "gangplank_initiative_id"
-    t.string   "organization_name"
+    t.string   "organizer_name"
     t.string   "organizer_email"
     t.boolean  "is_space_reserved"
     t.string   "event_privacy"
