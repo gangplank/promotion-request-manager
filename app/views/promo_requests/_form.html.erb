@@ -64,12 +64,15 @@
     <%= f.text_field :registration_url %>
   </div>
   <div class="field">
+    <%= f.label 'Promotion Channels' %>
+    <div>
     <% PromoChannel.all.each do |promo_channel| %>
        <label>
           <%= check_box_tag "promo_request[promo_channel_ids][]", promo_channel.id, f.object.promo_channels.include?(promo_channel) %>
           <%= promo_channel.name %>
        </label>
     <% end %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :press_release_uri %><br>
